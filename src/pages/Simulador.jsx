@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { temas, formatCurrency, formatNumber, getRiscoFromProcedencia, RISCO_LABELS, RISCO_COLORS } from '../data/mock.js'
+import { downloadContingencia } from '../utils/download.js'
 
 export default function Simulador() {
   const [temaId, setTemaId] = useState(temas[0].id)
@@ -81,7 +82,7 @@ export default function Simulador() {
                   { label: 'Cenário Otimista', value: formatCurrency(resultado.provisaoOtimista), sub: 'improcedência total', color: 'text-green-400' },
                   { label: 'Cenário Realista', value: formatCurrency(resultado.provisaoRealista), sub: 'ponderação estatística', color: 'text-amber-400' },
                   { label: 'Cenário Pessimista', value: formatCurrency(resultado.provisaoPessimista), sub: 'procedência total', color: 'text-red-400' },
-                  { label: 'Exposição Total', value: formatCurrency(resultado.provisaoTotal), sub: `${quantidade} processos × ${formatCurrency(resultado.vm)}`, color: 'text-silver-100' },
+                  { label: 'Exposição Total', value: formatCurrency(resultado.provisaoTotal), sub: `${quantidade} processos × ${formatCurrency(resultado.vm)}`, color: '' },
                 ].map(({ label, value, sub, color }) => (
                   <div key={label} className="p-4 rounded-xl" style={{ background: 'var(--bg-tertiary)', border: '1px solid var(--border)' }}>
                     <p className="text-xs" style={{ color: 'var(--text-tertiary)' }}>{label}</p>
@@ -116,7 +117,7 @@ export default function Simulador() {
                 </p>
               </div>
 
-              <button onClick={() => { alert('Relatório de contingência gerado com sucesso! (simulado)') }} className="btn btn-primary w-full text-sm py-2.5">
+              <button onClick={() => downloadContingencia(tema, quantidade, resultado.vm, { otimista: resultado.provisaoOtimista, realista: resultado.provisaoRealista, pessimista: resultado.provisaoPessimista, total: resultado.provisaoTotal })} className="btn btn-primary w-full text-sm py-2.5">
                 Gerar Relatório de Contingência
               </button>
             </div>

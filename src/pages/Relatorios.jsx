@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { relatorios, TYPE_COLORS } from '../data/mock.js'
+import { downloadReport } from '../utils/download.js'
 
 const CATEGORIAS = [
   { label: 'Todos', key: 'todos' },
@@ -78,7 +79,7 @@ export default function Relatorios() {
                   )}
                 </div>
                 {rel.status === 'pronto' && (
-                  <button className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent)' }} onClick={() => alert(`Relatório "${rel.titulo}" baixado (simulado)`)}>
+                  <button className="text-xs font-medium" style={{ color: 'var(--accent)' }} onClick={() => downloadReport(rel)}>
                     Download →
                   </button>
                 )}
