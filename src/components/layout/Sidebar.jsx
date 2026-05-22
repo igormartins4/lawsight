@@ -21,6 +21,24 @@ const navItems = [
     ),
   },
   {
+    to: '/escritorios',
+    label: 'Escritórios',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+      </svg>
+    ),
+  },
+  {
+    to: '/magistrados',
+    label: 'Magistrados',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      </svg>
+    ),
+  },
+  {
     to: '/tribunais',
     label: 'Tribunais',
     icon: (
@@ -43,7 +61,6 @@ const navItems = [
 export default function Sidebar() {
   return (
     <aside className="w-60 bg-navy-900 border-r border-navy-600 flex flex-col flex-shrink-0">
-      {/* Logo */}
       <div className="p-5 border-b border-navy-600">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Lawsight" className="w-9 h-9 rounded-lg object-cover flex-shrink-0" />
@@ -54,7 +71,6 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className="flex-1 p-3 space-y-0.5">
         <p className="text-silver-400 text-xs font-semibold uppercase tracking-wider px-3 py-2 mt-1">Monitoramento</p>
         {navItems.map((item) => (
@@ -75,9 +91,8 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      {/* Footer */}
       <div className="p-4 border-t border-navy-600">
-        <p className="text-silver-400 text-xs text-center">MVP v0.1.0 · Dados simulados</p>
+        <p className="text-silver-400 text-xs text-center">v0.2.0 · Dados simulados</p>
       </div>
     </aside>
   )
