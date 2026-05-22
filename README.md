@@ -168,9 +168,9 @@ O Lawsight está em conformidade com a **Lei Geral de Proteção de Dados (Lei 1
 
 ## Licença
 
-Todos os direitos reservados © 2025 [Igor Martins](https://github.com/igormartins4)
+Todos os direitos reservados © 2025 **Lawsight**
 
-Este software e seu código-fonte são propriedade intelectual do autor. Não é permitida a reprodução, distribuição ou modificação sem autorização expressa por escrito.
+Este software e seu código-fonte são propriedade intelectual da Lawsight. Não é permitida a reprodução, distribuição ou modificação sem autorização expressa por escrito.
 
 ---
 
