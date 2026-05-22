@@ -20,25 +20,25 @@ export default function Relatorios() {
   return (
     <div className="p-8 max-w-screen-xl mx-auto">
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-silver-100">Relatórios</h1>
-        <p className="text-silver-300 mt-1 text-sm">{relatorios.length} relatórios · Gerenciais e analíticos</p>
+        <h1 className="text-2xl font-semibold" style={{ color: 'var(--text-primary)' }}>Relatórios</h1>
+        <p className="mt-1 text-sm" style={{ color: 'var(--text-tertiary)' }}>{relatorios.length} relatórios · Gerenciais e analíticos</p>
       </div>
 
-      {/* Category pills */}
       <div className="flex gap-2 flex-wrap mb-6">
         {CATEGORIAS.map((cat) => (
           <button
             key={cat.key}
             onClick={() => setFiltro(cat.key)}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-              filtro === cat.key
-                ? 'bg-blue-600/30 text-blue-300 border border-blue-600/50'
-                : 'bg-navy-800 text-silver-300 border border-navy-600 hover:border-navy-500'
-            }`}
+            style={{
+              padding: '6px 14px', borderRadius: '8px', fontSize: '12px', fontWeight: 500,
+              background: filtro === cat.key ? 'var(--accent-muted)' : 'var(--bg-card)',
+              color: filtro === cat.key ? 'var(--accent)' : 'var(--text-secondary)',
+              border: filtro === cat.key ? '1px solid var(--accent)' : '1px solid var(--border)',
+            }}
           >
             {cat.label}
             {cat.key !== 'todos' && (
-              <span className="ml-1 text-silver-400">
+              <span className="ml-1" style={{ color: 'var(--text-muted)' }}>
                 ({relatorios.filter((r) => cat.key === 'pronto' || cat.key === 'processando' ? r.status === cat.key : r.tipo === cat.key).length})
               </span>
             )}
@@ -46,33 +46,29 @@ export default function Relatorios() {
         ))}
       </div>
 
-      {/* Reports grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {filtrados.map((rel, i) => {
           const typeStyle = TYPE_COLORS[rel.tipo] ?? TYPE_COLORS['PDF']
           return (
-            <div
-              key={i}
-              className="bg-navy-800 rounded-xl p-5 border border-navy-600 hover:border-navy-500 transition-all duration-150 flex flex-col gap-4 group"
-            >
+            <div key={i} className="card p-5 flex flex-col gap-4 group">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-silver-100 text-sm leading-snug">{rel.titulo}</p>
-                  <p className="text-silver-400 text-xs mt-1 leading-relaxed">{rel.descricao}</p>
+                  <p className="font-medium text-sm leading-snug" style={{ color: 'var(--text-primary)' }}>{rel.titulo}</p>
+                  <p className="text-xs mt-1 leading-relaxed" style={{ color: 'var(--text-tertiary)' }}>{rel.descricao}</p>
                 </div>
-                <span className={`text-xs font-mono font-semibold px-2.5 py-1 rounded border flex-shrink-0 ${typeStyle.bg} ${typeStyle.text} ${typeStyle.border}`}>
+                <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded border flex-shrink-0" style={{ background: typeStyle.bg, color: typeStyle.text, borderColor: typeStyle.borderColor ?? typeStyle.text }}>
                   {rel.tipo}
                 </span>
               </div>
 
-              <div className="flex items-center justify-between pt-3 border-t border-navy-600">
+              <div className="flex items-center justify-between pt-3" style={{ borderTop: '1px solid var(--border)' }}>
                 <div className="flex items-center gap-1.5">
                   {rel.status === 'pronto' ? (
                     <>
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
                       <span className="text-xs text-green-400">Pronto</span>
-                      {rel.data && <span className="text-xs text-silver-400 ml-1">· {rel.data}</span>}
-                      {rel.tamanho && <span className="text-xs text-silver-400">· {rel.tamanho}</span>}
+                      {rel.data && <span className="text-xs" style={{ color: 'var(--text-muted)' }}>· {rel.data}</span>}
+                      {rel.tamanho && <span className="text-xs" style={{ color: 'var(--text-muted)' }}>· {rel.tamanho}</span>}
                     </>
                   ) : (
                     <>
@@ -82,7 +78,7 @@ export default function Relatorios() {
                   )}
                 </div>
                 {rel.status === 'pronto' && (
-                  <button className="text-xs text-blue-400 hover:text-blue-300 transition-colors font-medium opacity-0 group-hover:opacity-100">
+                  <button className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent)' }} onClick={() => alert(`Relatório "${rel.titulo}" baixado (simulado)`)}>
                     Download →
                   </button>
                 )}
@@ -94,7 +90,7 @@ export default function Relatorios() {
 
       {filtrados.length === 0 && (
         <div className="py-16 text-center">
-          <p className="text-silver-400 text-sm">Nenhum relatório encontrado para este filtro.</p>
+          <p className="text-sm" style={{ color: 'var(--text-tertiary)' }}>Nenhum relatório encontrado para este filtro.</p>
         </div>
       )}
     </div>
