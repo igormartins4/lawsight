@@ -15,7 +15,7 @@
   <img src="https://img.shields.io/badge/Vite-5.4-0b0f1a?style=flat&logo=vite&logoColor=c49a3a" alt="Vite">
   <img src="https://img.shields.io/badge/Tailwind-3.4-0b0f1a?style=flat&logo=tailwindcss&logoColor=c49a3a" alt="Tailwind">
   <img src="https://img.shields.io/badge/GitHub_Pages-0b0f1a?style=flat&logo=githubpages&logoColor=c49a3a" alt="GitHub Pages">
-  <img src="https://img.shields.io/badge/license-MIT-0b0f1a?style=flat" alt="License">
+  <img src="https://img.shields.io/badge/license-All_Rights_Reserved-0b0f1a?style=flat&color=aa2222" alt="License">
 </p>
 
 ---
@@ -168,7 +168,9 @@ O Lawsight está em conformidade com a **Lei Geral de Proteção de Dados (Lei 1
 
 ## Licença
 
-MIT © 2025 [Igor Martins](https://github.com/igormartins4)
+Todos os direitos reservados © 2025 [Igor Martins](https://github.com/igormartins4)
+
+Este software e seu código-fonte são propriedade intelectual do autor. Não é permitida a reprodução, distribuição ou modificação sem autorização expressa por escrito.
 
 ---
 
