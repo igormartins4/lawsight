@@ -58,6 +58,27 @@ export default function Dashboard() {
         </div>
       </div>
 
+      {/* Executive Insight */}
+      <div className="card p-5 mb-6" style={{ borderLeft: '4px solid var(--accent)' }}>
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'var(--accent-muted)' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ color: 'var(--accent)' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--text-tertiary)' }}>Insight Executivo</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-primary)' }}>
+              A taxa de procedência consolidada é de <strong style={{ color: 'var(--danger)' }}>{avgProcedente.toFixed(1)}%</strong>, com tendência de
+              <strong style={{ color: kpis.variacaoProcedencia > 0 ? 'var(--danger)' : 'var(--success)' }}> {kpis.variacaoProcedencia > 0 ? '+' : ''}{kpis.variacaoProcedencia.toFixed(1)}pp</strong> nos últimos meses.
+              O tema crítico é <strong>{temas.sort((a, b) => b.procedente - a.procedente)[0].nome}</strong> ({temas.sort((a, b) => b.procedente - a.procedente)[0].procedente.toFixed(0)}% de procedência).
+              Exposição total estimada em <strong>{formatCurrency(kpis.valorTotalRisco)}</strong>.
+              {' '}<span style={{ color: 'var(--accent)' }}>Recomenda-se revisão de contratos e acordos preventivos nos temas de maior risco.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 mb-6">
         <KpiCard label="Total de Processos" value={formatNumber(kpis.totalProcessos)} trend={kpis.variacaoProcessos} trendUnit="%" trendInverted={false} />
         <KpiCard label="Taxa de Procedência" value={formatPercent(kpis.taxaProcedenciaMedia)} trend={kpis.variacaoProcedencia} trendUnit="pp" trendInverted={true} />
