@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useFavorites } from '../contexts/FavoritesContext.jsx'
-import { temas, tribunais, formatCurrency, formatPercent, getRiscoFromProcedencia, RISCO_COLORS } from '../data/mock.js'
+import { temas, tribunais, historico, formatCurrency, formatPercent, getRiscoFromProcedencia, RISCO_COLORS } from '../data/mock.js'
 import RiskBadge from '../components/ui/RiskBadge.jsx'
 import RiskBar from '../components/ui/RiskBar.jsx'
 import ProcedenceDonut from '../components/charts/ProcedenceDonut.jsx'
