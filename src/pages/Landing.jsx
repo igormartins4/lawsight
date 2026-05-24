@@ -9,7 +9,7 @@ export default function Landing() {
     <div className="min-h-screen bg-navy-950 flex flex-col">
       <header className="p-6 flex items-center justify-between max-w-6xl mx-auto w-full">
         <div className="flex items-center gap-3">
-          <img src="/lawsight-logo.jpeg" alt="Lawsight" className="w-10 h-10 object-contain" />
+          <img src="/lawsight/lawsight-logo.jpeg" alt="Lawsight" className="w-10 h-10 object-contain" />
           <span className="text-xl font-bold text-white">Lawsight</span>
         </div>
         <div className="flex items-center gap-3">
