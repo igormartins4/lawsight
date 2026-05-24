@@ -12,12 +12,12 @@ export default function Jurisprudencias() {
 
   return (
     <div className="p-4 md:p-8 max-w-screen-xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <div>
           <h1 className="text-2xl font-semibold" style={{ color: 'var(--text-primary)' }}>Jurisprudências</h1>
           <p className="text-sm mt-1" style={{ color: 'var(--text-tertiary)' }}>Cadastro de decisões judiciais</p>
         </div>
-        <button onClick={() => { setEditando(null); setShowForm(!showForm) }} className="btn" style={{ background: 'var(--accent)', color: '#0a1628', fontWeight: 600 }}>
+        <button onClick={() => { setEditando(null); setShowForm(!showForm) }} className="btn" style={{ background: 'var(--accent)', color: 'var(--bg-primary)', fontWeight: 600 }}>
           {showForm ? 'Cancelar' : '+ Nova Decisão'}
         </button>
       </div>
@@ -38,50 +38,43 @@ export default function Jurisprudencias() {
         />
       )}
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr style={{ color: 'var(--text-muted)' }}>
-              <th className="text-left font-medium py-2 pr-3 text-[10px] uppercase tracking-wider">Processo</th>
-              <th className="text-left font-medium py-2 pr-3 text-[10px] uppercase tracking-wider hidden md:table-cell">Tribunal</th>
-              <th className="text-left font-medium py-2 pr-3 text-[10px] uppercase tracking-wider hidden lg:table-cell">Tema</th>
-              <th className="text-left font-medium py-2 pr-3 text-[10px] uppercase tracking-wider">Resultado</th>
-              <th className="text-left font-medium py-2 pr-3 text-[10px] uppercase tracking-wider hidden sm:table-cell">Data</th>
-              <th className="text-right font-medium py-2 text-[10px] uppercase tracking-wider">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {lista.slice(0, 20).map(d => (
-              <tr key={d.id} className="border-t" style={{ borderColor: 'var(--border)' }}>
-                <td className="py-3 pr-3">
-                  <span className="font-mono text-xs" style={{ color: 'var(--text-primary)' }}>{d.processoNumero}</span>
-                </td>
-                <td className="py-3 pr-3 hidden md:table-cell" style={{ color: 'var(--text-secondary)' }}>{d.tribunal}</td>
-                <td className="py-3 pr-3 hidden lg:table-cell" style={{ color: 'var(--text-secondary)' }}>{d.tema}</td>
-                <td className="py-3 pr-3">
-                  <span className={`text-xs font-medium ${d.resultado === 'favoravel-empresa' ? 'text-green-400' : d.resultado === 'favoravel-trabalhador' ? 'text-red-400' : d.resultado === 'parcialmente-favoravel' ? 'text-amber-400' : 'text-silver-300'}`}>
-                    {RESULTADOS_LABELS[d.resultado]}
-                  </span>
-                </td>
-                <td className="py-3 pr-3 hidden sm:table-cell" style={{ color: 'var(--text-muted)' }}>{d.dataDecisao}</td>
-                <td className="py-3 text-right">
-                  <div className="flex items-center justify-end gap-1">
-                    <button onClick={() => { setEditando(d); setShowForm(true) }} className="btn-icon" title="Editar">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                      </svg>
-                    </button>
-                    <button onClick={() => handleDelete(d.id)} className="btn-icon" title="Excluir">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                      </svg>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+        {lista.slice(0, 20).map(d => (
+          <div key={d.id} className="card p-4 transition-all duration-150 hover:border-opacity-100" style={{ borderColor: 'var(--border)' }}>
+            <div className="flex items-start justify-between mb-2">
+              <div className="flex-1 min-w-0 mr-2">
+                <p className="text-xs font-mono truncate" style={{ color: 'var(--text-primary)' }}>{d.processoNumero}</p>
+                <p className="text-xs truncate mt-0.5" style={{ color: 'var(--text-secondary)' }}>{d.tema} · {d.tribunal}</p>
+              </div>
+              <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full flex-shrink-0 ${d.resultado === 'favoravel-empresa' ? 'bg-green-500/10 text-green-400' : d.resultado === 'favoravel-trabalhador' ? 'bg-red-500/10 text-red-400' : 'bg-amber-500/10 text-amber-400'}`}>
+                {RESULTADOS_LABELS[d.resultado]}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs mb-2" style={{ color: 'var(--text-muted)' }}>
+              <span>{d.vara}</span>
+              <span>{d.magistrado}</span>
+              {d.valorCondenacao > 0 && <span>{formatCurrencyFull(d.valorCondenacao)}</span>}
+            </div>
+            <p className="text-xs leading-relaxed line-clamp-2 mb-3" style={{ color: 'var(--text-secondary)' }}>
+              {d.resumo}
+            </p>
+            <div className="flex items-center justify-between pt-2 border-t" style={{ borderColor: 'var(--border)' }}>
+              <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>{d.dataDecisao}</span>
+              <div className="flex gap-1">
+                <button onClick={(e) => { e.stopPropagation(); setEditando(d); setShowForm(true) }} className="btn-icon" title="Editar">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                  </svg>
+                </button>
+                <button onClick={(e) => { e.stopPropagation(); handleDelete(d.id) }} className="btn-icon" title="Excluir">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -189,7 +182,7 @@ function FormularioDecisao({ editando, onSave, onCancel }) {
         </div>
       </div>
       <div className="flex gap-2 pt-2">
-        <button type="submit" className="btn bg-teal-500 text-navy-950 hover:bg-teal-400 font-semibold">
+        <button type="submit" className="btn bg-silver-100 text-navy-950 hover:bg-silver-200 font-semibold">
           {editando ? 'Salvar Alterações' : 'Cadastrar'}
         </button>
         <button type="button" onClick={onCancel} className="btn btn-ghost">Cancelar</button>

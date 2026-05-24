@@ -46,50 +46,30 @@ export default function Dashboard() {
             + Novo Caso
           </button>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr style={{ color: 'var(--text-muted)' }}>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider">Caso</th>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider hidden md:table-cell">Tema</th>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider hidden lg:table-cell">Tribunal</th>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider hidden xl:table-cell">Vara/Turma</th>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider hidden xl:table-cell">Magistrado</th>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider">Risco</th>
-                <th className="text-left font-medium py-2 pr-4 text-[10px] uppercase tracking-wider hidden sm:table-cell">Data</th>
-                <th className="text-right font-medium py-2 text-[10px] uppercase tracking-wider">Ação</th>
-              </tr>
-            </thead>
-            <tbody>
-              {casos.map(c => (
-                <tr key={c.id} className="border-t" style={{ borderColor: 'var(--border)' }}>
-                  <td className="py-3 pr-4">
-                    <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{c.nomeCaso}</span>
-                  </td>
-                  <td className="py-3 pr-4 hidden md:table-cell" style={{ color: 'var(--text-secondary)' }}>{c.tema}</td>
-                  <td className="py-3 pr-4 hidden lg:table-cell" style={{ color: 'var(--text-secondary)' }}>{c.tribunal}</td>
-                  <td className="py-3 pr-4 hidden xl:table-cell" style={{ color: 'var(--text-secondary)' }}>{c.vara}</td>
-                  <td className="py-3 pr-4 hidden xl:table-cell" style={{ color: 'var(--text-secondary)' }}>{c.magistrado}</td>
-                  <td className="py-3 pr-4">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold" style={{
-                      border: '1px solid',
-                      color: RISCO_COLORS[c.risco],
-                      backgroundColor: `${RISCO_COLORS[c.risco]}15`,
-                    }}>
-                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: RISCO_COLORS[c.risco] }} />
-                      {RISCO_LABELS[c.risco]}
-                    </span>
-                  </td>
-                  <td className="py-3 pr-4 hidden sm:table-cell" style={{ color: 'var(--text-muted)' }}>{c.dataCriacao}</td>
-                  <td className="py-3 text-right">
-                    <button onClick={() => navigate(`/relatorio/${c.id}`)} className="btn text-xs py-1" style={{ background: 'var(--accent-muted)', color: 'var(--accent)' }}>
-                      Ver Relatório
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+          {casos.map(c => (
+            <div key={c.id} className="p-3 rounded-lg cursor-pointer transition-all duration-150 hover:scale-[1.02]" style={{ background: 'var(--bg-tertiary)' }} onClick={() => navigate(`/relatorio/${c.id}`)}>
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex-1 min-w-0 mr-2">
+                  <p className="text-sm font-medium truncate" style={{ color: 'var(--text-primary)' }}>{c.nomeCaso}</p>
+                  <p className="text-xs truncate mt-0.5" style={{ color: 'var(--text-secondary)' }}>{c.tema}</p>
+                </div>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold flex-shrink-0" style={{
+                  border: '1px solid',
+                  color: RISCO_COLORS[c.risco],
+                  backgroundColor: `${RISCO_COLORS[c.risco]}15`,
+                }}>
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: RISCO_COLORS[c.risco] }} />
+                  {RISCO_LABELS[c.risco]}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs" style={{ color: 'var(--text-muted)' }}>
+                <span>{c.tribunal}</span>
+                <span className="hidden sm:inline">{c.vara}</span>
+                <span>{c.dataCriacao}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
