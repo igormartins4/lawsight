@@ -112,56 +112,56 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| UX-01 | Phase TBD | Pending |
-| UX-02 | Phase TBD | Pending |
-| UX-03 | Phase TBD | Pending |
-| LAND-01 | Phase TBD | Pending |
-| LAND-02 | Phase TBD | Pending |
-| LAND-03 | Phase TBD | Pending |
-| AUTH-01 | Phase TBD | Pending |
-| AUTH-02 | Phase TBD | Pending |
-| AUTH-03 | Phase TBD | Pending |
-| AUTH-04 | Phase TBD | Pending |
-| AUTH-05 | Phase TBD | Pending |
-| DASH-01 | Phase TBD | Pending |
-| DASH-02 | Phase TBD | Pending |
-| DASH-03 | Phase TBD | Pending |
-| DASH-04 | Phase TBD | Pending |
-| DASH-05 | Phase TBD | Pending |
-| DASH-06 | Phase TBD | Pending |
-| DASH-07 | Phase TBD | Pending |
-| CASE-01 | Phase TBD | Pending |
-| CASE-02 | Phase TBD | Pending |
-| CASE-03 | Phase TBD | Pending |
-| JUR-01 | Phase TBD | Pending |
-| JUR-02 | Phase TBD | Pending |
-| JUR-03 | Phase TBD | Pending |
-| JUR-04 | Phase TBD | Pending |
-| SEARCH-01 | Phase TBD | Pending |
-| SEARCH-02 | Phase TBD | Pending |
-| SEARCH-03 | Phase TBD | Pending |
-| SEARCH-04 | Phase TBD | Pending |
-| SEARCH-05 | Phase TBD | Pending |
-| ANAL-01 | Phase TBD | Pending |
-| ANAL-02 | Phase TBD | Pending |
-| ANAL-03 | Phase TBD | Pending |
-| ANAL-04 | Phase TBD | Pending |
-| ANAL-05 | Phase TBD | Pending |
-| ANAL-06 | Phase TBD | Pending |
-| ANAL-07 | Phase TBD | Pending |
-| ANAL-08 | Phase TBD | Pending |
-| ANAL-09 | Phase TBD | Pending |
-| REP-01 | Phase TBD | Pending |
-| REP-02 | Phase TBD | Pending |
-| REP-03 | Phase TBD | Pending |
-| DATA-01 | Phase TBD | Pending |
-| DATA-02 | Phase TBD | Pending |
-| LEG-01 | Phase TBD | Pending |
+| UX-01 | Phase 1 | Pending |
+| UX-02 | Phase 1 | Pending |
+| UX-03 | Phase 1 | Pending |
+| LAND-01 | Phase 1 | Pending |
+| LAND-02 | Phase 1 | Pending |
+| LAND-03 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| DASH-01 | Phase 7 | Pending |
+| DASH-02 | Phase 7 | Pending |
+| DASH-03 | Phase 7 | Pending |
+| DASH-04 | Phase 7 | Pending |
+| DASH-05 | Phase 7 | Pending |
+| DASH-06 | Phase 7 | Pending |
+| DASH-07 | Phase 7 | Pending |
+| CASE-01 | Phase 2 | Pending |
+| CASE-02 | Phase 2 | Pending |
+| CASE-03 | Phase 2 | Pending |
+| JUR-01 | Phase 3 | Pending |
+| JUR-02 | Phase 3 | Pending |
+| JUR-03 | Phase 3 | Pending |
+| JUR-04 | Phase 3 | Pending |
+| SEARCH-01 | Phase 4 | Pending |
+| SEARCH-02 | Phase 4 | Pending |
+| SEARCH-03 | Phase 4 | Pending |
+| SEARCH-04 | Phase 4 | Pending |
+| SEARCH-05 | Phase 4 | Pending |
+| ANAL-01 | Phase 5 | Pending |
+| ANAL-02 | Phase 5 | Pending |
+| ANAL-03 | Phase 5 | Pending |
+| ANAL-04 | Phase 5 | Pending |
+| ANAL-05 | Phase 5 | Pending |
+| ANAL-06 | Phase 5 | Pending |
+| ANAL-07 | Phase 5 | Pending |
+| ANAL-08 | Phase 5 | Pending |
+| ANAL-09 | Phase 5 | Pending |
+| REP-01 | Phase 6 | Pending |
+| REP-02 | Phase 6 | Pending |
+| REP-03 | Phase 6 | Pending |
+| DATA-01 | Phase 3 | Pending |
+| DATA-02 | Phase 3 | Pending |
+| LEG-01 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 44 total
-- Mapped to phases: 0
-- Unmapped: 44 ⚠️
+- Mapped to phases: 44
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-05-24*
