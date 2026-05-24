@@ -135,7 +135,7 @@ function gerarDecisoes() {
       temaId: tema.id,
       tema: tema.nome,
       subtema: pick(tema.subtemas, i + 5),
-      ementa: `Ementa referente a ${tema.nome}. Decisão sobre pedido de ${pick(tema.subtemas, i + 7)}. ${resultado === 'favoravel-empresa' ? 'Improcedente o pedido formulado na inicial.' : resultado === 'favoravel-trabalhador' ? 'Procedente o pedido de indenização.' : resultado === 'parcialmente-favoravel' ? 'Parcialmente procedente o pedido.' : 'Decisão inconclusiva quanto ao mérito.'}`,
+      ementa: `Ementa referente à ${tema.nome}. Decisão sobre pedido de ${pick(tema.subtemas, i + 7)}. ${resultado === 'favoravel-empresa' ? 'Improcedente o pedido formulado na inicial.' : resultado === 'favoravel-trabalhador' ? 'Procedente o pedido de indenização.' : resultado === 'parcialmente-favoravel' ? 'Parcialmente procedente o pedido.' : 'Decisão inconclusiva quanto ao mérito.'}`,
       resumo: `Decisão sobre ${tema.nome} julgada pelo ${tribunal.nome}. ${magistrado.nome} foi o relator. O resultado foi ${RESULTADOS_LABELS[resultado].toLowerCase()}.`,
       resultado,
       valorCondenacao: Math.round(valor),
@@ -328,3 +328,77 @@ export const RISCO_LABELS = {
   medio: 'Médio',
   baixo: 'Baixo',
 }
+
+// ── Temas derivados (lowercase alias + dados completos) ──────
+
+export function getRiscoFromProcedencia(perc) {
+  if (perc > 60) return 'baixo'
+  if (perc >= 40) return 'medio'
+  return 'alto'
+}
+
+export const temas = TEMAS.map((t, i) => ({
+  ...t,
+  descricao: `Análise de dados jurimétricos sobre ${t.nome.toLowerCase()} na Justiça do Trabalho. Inclui decisões, valores de condenação e tendências por tribunal.`,
+  risco: getRiscoFromProcedencia(50 + Math.sin(i * 1.7) * 30),
+  casos: 30 + Math.round(Math.abs(Math.sin(i * 2.3)) * 40),
+  valorMedio: Math.round(rand(5000, 80000, i)),
+  porTribunal: TRIBUNAIS.map((trt, j) => ({
+    tribunalId: trt.id,
+    proporcao: Math.round(Math.abs(Math.sin(i + j * 0.7)) * 100),
+    procedencia: Math.round(30 + Math.abs(Math.sin(i * 1.3 + j * 2.1)) * 60),
+    casos: 5 + Math.round(Math.abs(Math.sin(i * 0.9 + j * 1.3)) * 30),
+  })),
+  porAno: [2021, 2022, 2023, 2024, 2025].map((ano, k) => ({
+    ano,
+    casos: 10 + Math.round(Math.abs(Math.sin(i * 1.1 + k * 0.5)) * 25),
+    favoraveis: 3 + Math.round(Math.abs(Math.sin(i * 0.7 + k * 1.1)) * 20),
+  })),
+  subtemas: t.subtemas.map((s, k) => ({
+    nome: s,
+    casos: 5 + Math.round(Math.abs(Math.sin(i * 2.1 + k * 1.7)) * 20),
+    risco: getRiscoFromProcedencia(40 + Math.sin(i * 1.1 + k * 2.3) * 35),
+  })),
+}))
+
+// ── Escritórios simulados ─────────────────────────────────────
+
+export const escritorios = [
+  { id: 'esc-1', nome: 'Cavalcanti & Advogados', especialidade: 'Trabalhista', casos: 48, valorRecuperado: 1850000, valorPerdido: 920000, tendencia: 2.3, risco: 'baixo', ultimaAtualizacao: '15 mai 2026', taxaSucesso: 0.68 },
+  { id: 'esc-2', nome: 'Mendes Sociedade de Advogados', especialidade: 'Empresarial/Trabalhista', casos: 72, valorRecuperado: 2100000, valorPerdido: 1850000, tendencia: -1.8, risco: 'medio', ultimaAtualizacao: '12 mai 2026', taxaSucesso: 0.52 },
+  { id: 'esc-3', nome: 'Dias & Oliveira Advocacia', especialidade: 'Trabalhista', casos: 35, valorRecuperado: 980000, valorPerdido: 420000, tendencia: 4.1, risco: 'baixo', ultimaAtualizacao: '10 mai 2026', taxaSucesso: 0.71 },
+  { id: 'esc-4', nome: 'Silva e Costa Advogados', especialidade: 'Trabalhista/Sindical', casos: 56, valorRecuperado: 1350000, valorPerdido: 1120000, tendencia: -0.5, risco: 'medio', ultimaAtualizacao: '08 mai 2026', taxaSucesso: 0.49 },
+  { id: 'esc-5', nome: 'Rocha & Pereira Advogados Associados', especialidade: 'Cível/Trabalhista', casos: 41, valorRecuperado: 760000, valorPerdido: 890000, tendencia: -3.2, risco: 'alto', ultimaAtualizacao: '05 mai 2026', taxaSucesso: 0.38 },
+  { id: 'esc-6', nome: 'Martins Sociedade de Advogados', especialidade: 'Trabalhista/Previdenciário', casos: 29, valorRecuperado: 610000, valorPerdido: 380000, tendencia: 1.5, risco: 'baixo', ultimaAtualizacao: '03 mai 2026', taxaSucesso: 0.65 },
+]
+
+// ── Histórico de decisões por ano ─────────────────────────────
+
+export const historico = [
+  { ano: 2021, total: 320, favoraveisEmpresa: 105, favoraveisTrabalhador: 140, parcial: 55, inconclusivo: 20 },
+  { ano: 2022, total: 410, favoraveisEmpresa: 138, favoraveisTrabalhador: 175, parcial: 68, inconclusivo: 29 },
+  { ano: 2023, total: 480, favoraveisEmpresa: 162, favoraveisTrabalhador: 198, parcial: 82, inconclusivo: 38 },
+  { ano: 2024, total: 550, favoraveisEmpresa: 190, favoraveisTrabalhador: 210, parcial: 100, inconclusivo: 50 },
+  { ano: 2025, total: 390, favoraveisEmpresa: 145, favoraveisTrabalhador: 152, parcial: 65, inconclusivo: 28 },
+]
+
+// ── Relatórios ────────────────────────────────────────────────
+
+export const TYPE_COLORS = {
+  PDF: { bg: '#fee2e2', text: '#991b1b', borderColor: '#fecaca' },
+  Excel: { bg: '#dcfce7', text: '#166534', borderColor: '#bbf7d0' },
+  Dashboard: { bg: '#dbeafe', text: '#1e40af', borderColor: '#bfdbfe' },
+  Analítico: { bg: '#f3e8ff', text: '#6b21a8', borderColor: '#e9d5ff' },
+  Gerencial: { bg: '#fef3c7', text: '#92400e', borderColor: '#fde68a' },
+}
+
+export const relatorios = [
+  { id: 'rel-1', titulo: 'Relatório Mensal de Jurimetria', descricao: 'Análise consolidada de decisões do mês com indicadores de risco e tendências por tribunal.', tipo: 'PDF', status: 'pronto' },
+  { id: 'rel-2', titulo: 'Comparativo de Tribunais 2025', descricao: 'Comparação de procedência, valores de condenação e tempo médio entre TRTs.', tipo: 'Excel', status: 'pronto' },
+  { id: 'rel-3', titulo: 'Painel de Riscos por Escritório', descricao: 'Dashboard interativo com métricas de risco por escritório representado.', tipo: 'Dashboard', status: 'processando' },
+  { id: 'rel-4', titulo: 'Análise de Tendências por Tema', descricao: 'Evolução anual de decisões favoráveis/desfavoráveis por tema jurídico.', tipo: 'PDF', status: 'pronto' },
+  { id: 'rel-5', titulo: 'Relatório de Condenações', descricao: 'Valores médios, mínimos e máximos de condenação por tribunal e vara.', tipo: 'Excel', status: 'pronto' },
+  { id: 'rel-6', titulo: 'Perfil Decisório de Magistrados', descricao: 'Levantamento de padrões decisórios individuais dos magistrados dos TRTs monitorados.', tipo: 'Analítico', status: 'pronto' },
+  { id: 'rel-7', titulo: 'Relatório Gerencial Semestral', descricao: 'Resumo executivo com KPIs, evolução de casos e recomendações estratégicas.', tipo: 'Gerencial', status: 'processando' },
+  { id: 'rel-8', titulo: 'Base de Jurisprudências Consolidada', descricao: 'Extração completa das decisões cadastradas com filtros por tema, tribunal e resultado.', tipo: 'Excel', status: 'pronto' },
+]
