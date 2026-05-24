@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { decisoes, tribunais, TEMAS, RESULTADOS_DECISAO, RESULTADOS_LABELS, varasPorTribunal, magistrados, formatCurrencyFull } from '../data/mock.js'
 
 export default function Jurisprudencias() {
+  const navigate = useNavigate()
   const [lista, setLista] = useState([...decisoes])
   const [editando, setEditando] = useState(null)
   const [showForm, setShowForm] = useState(false)
@@ -40,7 +42,7 @@ export default function Jurisprudencias() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
         {lista.slice(0, 20).map(d => (
-          <div key={d.id} className="card p-4 transition-all duration-150 hover:border-opacity-100" style={{ borderColor: 'var(--border)' }}>
+          <div key={d.id} className="card p-4 transition-all duration-150 hover:border-opacity-100 cursor-pointer" style={{ borderColor: 'var(--border)' }} onClick={() => navigate(`/jurisprudencias/${d.id}`)} onKeyDown={(e) => e.key === 'Enter' && navigate(`/jurisprudencias/${d.id}`)} role="link" tabIndex={0}>
             <div className="flex items-start justify-between mb-2">
               <div className="flex-1 min-w-0 mr-2">
                 <p className="text-xs font-mono truncate" style={{ color: 'var(--text-primary)' }}>{d.processoNumero}</p>

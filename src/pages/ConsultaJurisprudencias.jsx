@@ -93,7 +93,7 @@ export default function ConsultaJurisprudencias() {
               </div>
             ) : (
               resultados.slice(0, 20).map(d => (
-                <div key={d.id} className="card p-4">
+                <div key={d.id} className="card p-4 cursor-pointer" onClick={() => navigate(`/jurisprudencias/${d.id}`)} onKeyDown={(e) => e.key === 'Enter' && navigate(`/jurisprudencias/${d.id}`)} role="link" tabIndex={0}>
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1 min-w-0 mr-4">
                       <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{d.tema}</p>
