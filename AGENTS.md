@@ -2,9 +2,9 @@
 
 ## Project
 
-**Labora Data**
+**Lawsight**
 
-Labora Data e uma plataforma web de jurimetria trabalhista empresarial para escritorios e departamentos juridicos. A plataforma permite cadastrar casos, consultar jurisprudencias, e gerar analises quantitativas e qualitativas para apoiar decisoes de acordo, defesa, recurso e risco processual.
+Lawsight e uma plataforma web de jurimetria trabalhista empresarial para escritorios e departamentos juridicos. A plataforma permite cadastrar casos, consultar jurisprudencias, e gerar analises quantitativas e qualitativas para apoiar decisoes de acordo, defesa, recurso e risco processual.
 
 **Core Value:** Apoiar decisoes juridicas mais seguras com analise de dados de jurisprudencia trabalhista.
 

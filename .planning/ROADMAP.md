@@ -1,4 +1,4 @@
-# Roadmap: Labora Data
+# Roadmap: Lawsight
 
 ## Overview
 
@@ -27,7 +27,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Depends on**: Nothing (first phase)
 **Requirements**: UX-01, UX-02, UX-03, LAND-01, LAND-02, LAND-03, AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, LEG-01
 **Success Criteria** (what must be TRUE):
-  1. Usuário visualiza a landing page em português com nome Labora Data, frase principal, três pontos de valor e CTAs principais.
+  1. Usuário visualiza a landing page em português com nome Lawsight, frase principal, três pontos de valor e CTAs principais.
   2. Usuário consegue informar nome, e-mail, senha, escritório/empresa e perfil em um login simples e prosseguir na aplicação.
   3. A interface aplica a identidade visual (azul escuro, verde-petróleo e branco) e funciona em mobile sem quebras visíveis.
   4. Todas as telas disponíveis exibem aviso jurídico no rodapé.

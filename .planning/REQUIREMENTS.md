@@ -1,4 +1,4 @@
-# Requirements: Labora Data
+# Requirements: Lawsight
 
 **Defined:** 2026-05-24
 **Core Value:** Apoiar decisoes juridicas mais seguras com analise de dados de jurisprudencia trabalhista.
@@ -15,7 +15,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Landing Page
 
-- [ ] **LAND-01**: Landing page exibe o nome Labora Data e a frase principal
+- [ ] **LAND-01**: Landing page exibe o nome Lawsight e a frase principal
 - [ ] **LAND-02**: Landing page apresenta os tres pontos de proposta de valor
 - [ ] **LAND-03**: Landing page possui CTAs para cadastrar caso, consultar jurisprudencias e ver analises
 

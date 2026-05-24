@@ -1,13 +1,13 @@
 # Project Research Summary
 
-**Project:** Labora Data
+**Project:** Lawsight
 **Domain:** Plataforma web de jurimetria trabalhista empresarial (SPA com dados simulados)
 **Researched:** 2026-05-24
 **Confidence:** MEDIUM
 
 ## Executive Summary
 
-Labora Data é uma plataforma web de jurimetria trabalhista empresarial focada em cadastro de casos, consulta de jurisprudência e geração de análises/relatórios para apoiar decisões jurídicas. A pesquisa converge para um MVP front-end (React + Vite + Tailwind) com dados simulados, priorizando fluxo de cadastro → análise → relatório e dashboards com KPIs, mantendo o sistema preparado para futura integração com APIs e autenticação. O foco é demonstrar valor com UI profissional, taxonomia consistente e motor de análise local.
+Lawsight é uma plataforma web de jurimetria trabalhista empresarial focada em cadastro de casos, consulta de jurisprudência e geração de análises/relatórios para apoiar decisões jurídicas. A pesquisa converge para um MVP front-end (React + Vite + Tailwind) com dados simulados, priorizando fluxo de cadastro → análise → relatório e dashboards com KPIs, mantendo o sistema preparado para futura integração com APIs e autenticação. O foco é demonstrar valor com UI profissional, taxonomia consistente e motor de análise local.
 
 A abordagem recomendada é estruturada por domínios (casos, decisões, análises, relatórios), com regras e métricas centralizadas em services e dados normalizados via adaptadores. Isso reduz acoplamento, permite reuso dos cálculos e prepara o caminho para escalabilidade. O roadmap deve seguir a ordem: modelos e taxonomia → cadastros e importação → motor de análise → relatórios → dashboards/UX refinada.
 
