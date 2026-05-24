@@ -45,6 +45,8 @@ export default function Temas() {
           <div
             key={tema.id}
             onClick={() => navigate(`/temas/${tema.id}`)}
+            onKeyDown={(e) => e.key === 'Enter' && navigate(`/temas/${tema.id}`)}
+            role="link" tabIndex={0}
             className="card p-5 cursor-pointer group"
           >
             <div className="flex items-start justify-between mb-3">

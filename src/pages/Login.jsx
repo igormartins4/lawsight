@@ -40,13 +40,13 @@ export default function Login() {
           )}
 
           <div>
-            <label className="block text-sm font-medium text-silver-200 mb-1.5">E-mail</label>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="seu@email.com" className="input w-full" />
+            <label htmlFor="login-email" className="block text-sm font-medium text-silver-200 mb-1.5">E-mail</label>
+            <input id="login-email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="seu@email.com" className="input w-full" />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-silver-200 mb-1.5">Senha</label>
-            <input type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Sua senha" className="input w-full" />
+            <label htmlFor="login-senha" className="block text-sm font-medium text-silver-200 mb-1.5">Senha</label>
+            <input id="login-senha" type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Sua senha" className="input w-full" />
           </div>
 
           <button type="submit" className="btn w-full py-3 bg-silver-100 text-navy-950 hover:bg-silver-200 font-semibold text-base">

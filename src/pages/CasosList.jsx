@@ -18,7 +18,7 @@ export default function CasosList() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
         {casos.map(c => (
-          <div key={c.id} className="card p-4 cursor-pointer transition-all duration-150 hover:scale-[1.02]" onClick={() => navigate(`/relatorio/${c.id}`)}>
+          <div key={c.id} className="card p-4 cursor-pointer transition-all duration-150 hover:scale-[1.02]" onClick={() => navigate(`/relatorio/${c.id}`)} onKeyDown={(e) => e.key === 'Enter' && navigate(`/relatorio/${c.id}`)} role="link" tabIndex={0}>
             <div className="flex items-start justify-between mb-3">
               <div className="flex-1 min-w-0 mr-2">
                 <p className="text-sm font-medium truncate" style={{ color: 'var(--text-primary)' }}>{c.nomeCaso}</p>

@@ -28,6 +28,7 @@ export default function Sidebar() {
         onClick={() => setMobileOpen(!mobileOpen)}
         className="fixed top-4 left-4 z-50 lg:hidden w-10 h-10 rounded-lg flex items-center justify-center"
         style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
+        aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ color: 'var(--text-primary)' }}>
           <path strokeLinecap="round" strokeLinejoin="round" d={mobileOpen ? 'M6 18L18 6M6 6l12 12' : 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'} />
@@ -91,8 +92,8 @@ export default function Sidebar() {
             </NavLink>
           ))}
           <p className="text-xs font-semibold uppercase tracking-wider px-3 py-2 mt-3" style={{ color: 'var(--text-muted)' }}>Jurisprudências</p>
-          {navItems.slice(3).map(item => (
-            <NavLink key={item.to} to={item.to}
+          {navItems.slice(3).map((item, idx) => (
+            <NavLink key={item.to} to={item.to} end={idx === 0}
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-150 ${isActive ? 'font-medium shadow-sm' : ''}`

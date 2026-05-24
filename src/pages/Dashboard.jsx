@@ -48,7 +48,7 @@ export default function Dashboard() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
           {casos.map(c => (
-            <div key={c.id} className="p-4 rounded-lg cursor-pointer transition-all duration-200 hover:scale-[1.02]" style={{ background: 'var(--bg-tertiary)' }} onClick={() => navigate(`/relatorio/${c.id}`)}>
+            <div key={c.id} className="p-4 rounded-lg cursor-pointer transition-all duration-200 hover:scale-[1.02]" style={{ background: 'var(--bg-tertiary)' }} onClick={() => navigate(`/relatorio/${c.id}`)} onKeyDown={(e) => e.key === 'Enter' && navigate(`/relatorio/${c.id}`)} role="link" tabIndex={0}>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1 min-w-0 mr-2">
                   <p className="text-sm font-medium truncate" style={{ color: 'var(--text-primary)' }}>{c.nomeCaso}</p>
@@ -75,7 +75,7 @@ export default function Dashboard() {
         <h2 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: 'var(--text-tertiary)' }}>Últimas Análises</h2>
         <div className="space-y-3">
           {analises.map(({ caso, analise }) => (
-            <div key={caso.id} className="flex items-center justify-between p-4 rounded-lg transition-all duration-200 hover:scale-[1.01] cursor-pointer" style={{ background: 'var(--bg-tertiary)' }} onClick={() => navigate(`/relatorio/${caso.id}`)}>
+            <div key={caso.id} className="flex items-center justify-between p-4 rounded-lg transition-all duration-200 hover:scale-[1.01] cursor-pointer" style={{ background: 'var(--bg-tertiary)' }} onClick={() => navigate(`/relatorio/${caso.id}`)} onKeyDown={(e) => e.key === 'Enter' && navigate(`/relatorio/${caso.id}`)} role="link" tabIndex={0}>
               <div className="flex-1 min-w-0 mr-4">
                 <p className="text-sm font-medium truncate" style={{ color: 'var(--text-primary)' }}>{caso.nomeCaso}</p>
                 <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{caso.tema} · {analise.totalDecisoes} decisões analisadas</p>

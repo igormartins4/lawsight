@@ -59,6 +59,8 @@ export default function Escritorios() {
           <div
             key={esc.id}
             onClick={() => navigate(`/escritorios/${esc.id}`)}
+            onKeyDown={(e) => e.key === 'Enter' && navigate(`/escritorios/${esc.id}`)}
+            role="link" tabIndex={0}
             className="card p-5 cursor-pointer group"
           >
             <div className="flex items-start justify-between mb-3">

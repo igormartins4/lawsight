@@ -48,10 +48,10 @@ export default function Relatorios() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {filtrados.map((rel, i) => {
+        {filtrados.map((rel) => {
           const typeStyle = TYPE_COLORS[rel.tipo] ?? TYPE_COLORS['PDF']
           return (
-            <div key={i} className="card p-5 flex flex-col gap-4 group">
+            <div key={rel.id} className="card p-5 flex flex-col gap-4 group">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-sm leading-snug" style={{ color: 'var(--text-primary)' }}>{rel.titulo}</p>
