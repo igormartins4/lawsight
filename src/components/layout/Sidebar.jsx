@@ -45,7 +45,7 @@ export default function Sidebar() {
       `} style={{ background: 'var(--bg-primary)', borderRight: '1px solid var(--border)' }}>
         <div className="p-5" style={{ borderBottom: '1px solid var(--border)' }}>
           <div className="flex items-center gap-3">
-            <img src="/lawsight/lawsight-logo.jpeg" alt="Lawsight" className="w-9 h-9 object-contain flex-shrink-0" />
+            <img src="/lawsight/lawsight-logo.jpeg" alt="Lawsight" className="h-10 w-auto object-contain flex-shrink-0" />
             <div className="min-w-0">
               <p className="font-semibold text-sm leading-tight" style={{ color: 'var(--text-primary)' }}>Lawsight</p>
               <p className="text-xs truncate" style={{ color: 'var(--text-tertiary)' }}>Jurimetria Trabalhista</p>

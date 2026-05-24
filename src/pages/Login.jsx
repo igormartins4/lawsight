@@ -27,7 +27,7 @@ export default function Login() {
     <div className="min-h-screen bg-navy-950 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <img src="/lawsight/lawsight-logo.jpeg" alt="Lawsight" className="w-14 h-14 object-contain mx-auto mb-4" />
+          <img src="/lawsight/lawsight-logo.jpeg" alt="Lawsight" className="h-20 w-auto object-contain mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-white">Lawsight</h1>
           <p className="text-silver-300 text-sm mt-1">Acesse sua conta</p>
         </div>
