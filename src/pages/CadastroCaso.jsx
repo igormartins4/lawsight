@@ -30,8 +30,8 @@ export default function CadastroCaso() {
     return (
       <div className="p-4 md:p-8 max-w-3xl mx-auto">
         <div className="card p-12 text-center">
-          <div className="w-16 h-16 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-teal-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <div className="w-16 h-16 rounded-full bg-silver-100/20 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-silver-100" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>
           </div>
@@ -155,7 +155,7 @@ export default function CadastroCaso() {
         </div>
 
         <div className="flex gap-3">
-          <button type="submit" className="btn py-3 px-8 bg-teal-500 text-navy-950 hover:bg-teal-400 font-semibold">
+          <button type="submit" className="btn py-3 px-8 bg-silver-100 text-navy-950 hover:bg-silver-200 font-semibold">
             Cadastrar e Analisar
           </button>
           <button type="button" onClick={() => navigate('/dashboard')} className="btn btn-ghost py-3 px-8">

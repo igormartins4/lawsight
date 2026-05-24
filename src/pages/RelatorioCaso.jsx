@@ -145,7 +145,7 @@ export default function RelatorioCaso() {
         {analise.temPadraoMagistrado && analise.padraoMagistrado ? (
           <div>
             <div className="p-3 rounded-lg mb-4" style={{ background: 'var(--bg-tertiary)' }}>
-              <p className="text-sm font-semibold text-teal-400 mb-2">Padrão Decisório do Magistrado</p>
+              <p className="text-sm font-semibold text-silver-100 mb-2">Padrão Decisório do Magistrado</p>
               <p className="text-xs mb-3" style={{ color: 'var(--text-secondary)' }}>
                 {analise.decisoesMesmoMagistrado} decisões analisadas do {caso.magistrado} sobre {caso.tema}.
               </p>
@@ -262,7 +262,7 @@ export default function RelatorioCaso() {
       {/* Disclaimer */}
       <div className="p-4 rounded-lg text-center" style={{ background: 'var(--bg-tertiary)' }}>
         <p className="text-[10px] leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-          A Labora Data é uma ferramenta de apoio à decisão baseada em análise estatística e qualitativa de decisões judiciais.
+          A Lawsight é uma ferramenta de apoio à decisão baseada em análise estatística e qualitativa de decisões judiciais.
           Os resultados apresentados não constituem parecer jurídico definitivo, não garantem resultado processual e devem ser interpretados por profissional habilitado.
         </p>
       </div>

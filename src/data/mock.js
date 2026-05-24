@@ -1,5 +1,5 @@
 // ============================================================
-// Labora Data — Mock Data Platform
+// Lawsight — Mock Data Platform
 // Jurimetria Trabalhista Empresarial — Dados simulados para MVP
 // ============================================================
 
@@ -20,7 +20,7 @@ function pick(arr, seed) {
 export const usuarios = [
   { id: 'u1', nome: 'Carlos Andrade', email: 'carlos@escritorio.adv.br', senha: '123456', escritorio: 'Andrade Advocacia Trabalhista', perfil: 'advogado' },
   { id: 'u2', nome: 'Marina Silva', email: 'marina@juridico.com.br', senha: '123456', escritorio: 'Indústrias Reunidas S.A.', perfil: 'gestor' },
-  { id: 'u3', nome: 'Admin Labora', email: 'admin@laboradata.com.br', senha: 'admin', escritorio: 'Labora Data', perfil: 'administrador' },
+  { id: 'u3', nome: 'Admin Lawsight', email: 'admin@lawsight.com.br', senha: 'admin', escritorio: 'Lawsight', perfil: 'administrador' },
 ]
 
 // ── Temas e subtemas ─────────────────────────────────────────

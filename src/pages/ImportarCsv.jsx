@@ -20,8 +20,8 @@ export default function ImportarCsv() {
       <p className="text-sm mb-6" style={{ color: 'var(--text-tertiary)' }}>Importe decisões em lote (simulação MVP)</p>
 
       <div className="card p-8 text-center space-y-6">
-        <div className="w-20 h-20 rounded-2xl bg-teal-500/10 flex items-center justify-center mx-auto">
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-teal-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <div className="w-20 h-20 rounded-2xl bg-silver-100/10 flex items-center justify-center mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-silver-100" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
           </svg>
         </div>
@@ -32,7 +32,7 @@ export default function ImportarCsv() {
         </div>
 
         {!concluido ? (
-          <button onClick={handleSimular} disabled={simulando} className="btn py-3 px-8 bg-teal-500 text-navy-950 hover:bg-teal-400 font-semibold disabled:opacity-50">
+          <button onClick={handleSimular} disabled={simulando} className="btn py-3 px-8 bg-silver-100 text-navy-950 hover:bg-silver-200 font-semibold disabled:opacity-50">
             {simulando ? (
               <span className="flex items-center gap-2">
                 <svg className="animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

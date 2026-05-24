@@ -76,7 +76,7 @@ export default function ConsultaJurisprudencias() {
             <input value={filtros.palavrasChave} onChange={e => setFiltros(f => ({ ...f, palavrasChave: e.target.value }))} placeholder="Ex: horas extras, adicional de insalubridade..." className="input w-full" />
           </div>
         </div>
-        <button type="submit" className="btn mt-4 bg-teal-500 text-navy-950 hover:bg-teal-400 font-semibold">
+        <button type="submit" className="btn mt-4 bg-silver-100 text-navy-950 hover:bg-silver-200 font-semibold">
           Buscar
         </button>
       </form>

@@ -32,7 +32,7 @@ export default function AppLayout() {
           </div>
           <footer className="p-4 border-t text-center" style={{ borderColor: 'var(--border)', background: 'var(--bg-primary)' }}>
             <p className="text-[10px] leading-relaxed px-4" style={{ color: 'var(--text-muted)' }}>
-              A Labora Data é uma ferramenta de apoio à decisão baseada em análise estatística e qualitativa de decisões judiciais.
+              A Lawsight é uma ferramenta de apoio à decisão baseada em análise estatística e qualitativa de decisões judiciais.
               Os resultados apresentados não constituem parecer jurídico definitivo, não garantem resultado processual e devem ser interpretados por profissional habilitado.
             </p>
           </footer>
