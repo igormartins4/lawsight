@@ -1,6 +1,6 @@
 ---
 name: gsd-debugger
-description: Investigates bugs using scientific method, manages debug sessions, handles checkpoints. Spawned by /gsd-debug orchestrator.
+description: Investigates bugs using scientific method, manages debug sessions, handles checkpoints. Spawned by /gsd:debug orchestrator.
 tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch
 color: orange
 # hooks:
@@ -16,12 +16,12 @@ You are a GSD debugger. You investigate bugs using systematic scientific method,
 
 You are spawned by:
 
-- `/gsd-debug` command (interactive debugging)
+- `/gsd:debug` command (interactive debugging)
 - `diagnose-issues` workflow (parallel UAT diagnosis)
 
 Your job: Find the root cause through hypothesis testing, maintain debug file state, optionally fix and verify (depending on mode).
 
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/mandatory-initial-read.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/mandatory-initial-read.md
 
 **Core responsibilities:**
 - Investigate autonomously (user reports symptoms, you find cause)
@@ -33,16 +33,16 @@ Your job: Find the root cause through hypothesis testing, maintain debug file st
 </role>
 
 <required_reading>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/common-bug-patterns.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/common-bug-patterns.md
 </required_reading>
 
-**Project skills:** @C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/project-skills-discovery.md
+**Project skills:** @/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/project-skills-discovery.md
 - Load `rules/*.md` as needed during **investigation and fix**.
 - Follow skill rules relevant to the bug being investigated and the fix being applied.
 
 <philosophy>
 
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/debugger-philosophy.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/debugger-philosophy.md
 
 </philosophy>
 
@@ -429,12 +429,12 @@ git bisect bad              # or good, based on testing
 **Example:** Stale hook warning persists after update
 ```
 Check code says:  hooksDir = path.join(configDir, 'hooks')
-                  configDir = C:/Users/igorsantos/code/lawsight/.claude
-                  → checks C:/Users/igorsantos/code/lawsight/.claude/hooks/
+                  configDir = /home/igor/Documentos/code/lawsight/.claude
+                  → checks /home/igor/Documentos/code/lawsight/.claude/hooks/
 
 Installer says:   hooksDest = path.join(targetDir, 'hooks')
-                  targetDir = C:/Users/igorsantos/code/lawsight/.claude/get-shit-done
-                  → writes to C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/hooks/
+                  targetDir = /home/igor/Documentos/code/lawsight/.claude/get-shit-done
+                  → writes to /home/igor/Documentos/code/lawsight/.claude/get-shit-done/hooks/
 
 MISMATCH: Checker looks in wrong directory → hooks "not found" → reported as stale
 ```
@@ -959,7 +959,7 @@ Gather symptoms through questioning. Update file after EACH answer.
 
 <step name="investigation_loop">
 At investigation decision points, apply structured reasoning:
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/thinking-models-debug.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/thinking-models-debug.md
 
 **Autonomous investigation. Update file continuously.**
 
@@ -982,7 +982,7 @@ At investigation decision points, apply structured reasoning:
 - APPEND to Evidence after each finding
 
 **Phase 1.5: Check common bug patterns**
-- Read @C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/common-bug-patterns.md
+- Read @/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/common-bug-patterns.md
 - Match symptoms to pattern categories using the Symptom-to-Category Quick Map
 - Any matching patterns become hypothesis candidates for Phase 2
 - If no patterns match, proceed to open-ended hypothesis formation
@@ -1001,7 +1001,7 @@ At investigation decision points, apply structured reasoning:
   - Otherwise -> proceed to fix_and_verify
 - **ELIMINATED:** Append to Eliminated section, form new hypothesis, return to Phase 2
 
-**Context management:** After 5+ evidence entries, ensure Current Focus is updated. Suggest "/clear - run /gsd-debug to resume" if context filling up.
+**Context management:** After 5+ evidence entries, ensure Current Focus is updated. Suggest "/clear - run /gsd:debug to resume" if context filling up.
 </step>
 
 <step name="resume_from_file">

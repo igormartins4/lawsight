@@ -52,7 +52,7 @@ If `PATH_NOT_FOUND` or `MANIFEST_NOT_FOUND`: display error and exit.
 Run the init query:
 
 ```bash
-INIT=$(node "C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" init ingest-docs)
+INIT=$(node "/home/igor/Documentos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" init ingest-docs)
 if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
 ```
 
@@ -128,7 +128,7 @@ De-duplicate the union (a file matched by multiple patterns is one doc).
 ```
 GSD > Discovered {N} docs, which exceeds the v1 cap of 50.
       Use --manifest to narrow the set to ≤ 50 files, or run
-      /gsd-ingest-docs again with a narrower <path>.
+      /gsd:ingest-docs again with a narrower <path>.
 ```
 
 Exit without proceeding.
@@ -295,7 +295,7 @@ Preview the merge diff to the user and gate via approve-revise-abort before writ
 Commit the ingest results:
 
 ```bash
-node "C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" commit \
+node "/home/igor/Documentos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" commit \
   "docs: ingest {N} docs from {SCAN_PATH} (#2387)" --files \
   .planning/PROJECT.md \
   .planning/REQUIREMENTS.md \
@@ -320,7 +320,7 @@ Show:
 - Docs ingested (count + type breakdown)
 - Decisions locked, requirements created, constraints captured
 - Conflict report path (`.planning/INGEST-CONFLICTS.md`)
-- Next step: `/gsd-plan-phase 1` (new mode) or `/gsd-plan-phase N` (merge, pointing at the first newly-added phase)
+- Next step: `/gsd:plan-phase 1` (new mode) or `/gsd:plan-phase N` (merge, pointing at the first newly-added phase)
 
 </step>
 

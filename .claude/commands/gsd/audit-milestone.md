@@ -1,5 +1,5 @@
 ---
-name: gsd-audit-milestone
+name: gsd:audit-milestone
 description: Audit milestone completion against original intent before archiving
 argument-hint: "[version]"
 allowed-tools:
@@ -18,7 +18,7 @@ Verify milestone achieved its definition of done. Check requirements coverage, c
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/audit-milestone.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/audit-milestone.md
 </execution_context>
 
 <context>

@@ -1,5 +1,5 @@
 ---
-name: gsd-secure-phase
+name: gsd:secure-phase
 description: Retroactively verify threat mitigations for a completed phase
 argument-hint: "[phase number]"
 allowed-tools:
@@ -23,7 +23,7 @@ Output: updated SECURITY.md.
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/secure-phase.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/secure-phase.md
 </execution_context>
 
 <context>

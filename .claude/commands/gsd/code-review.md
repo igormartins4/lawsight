@@ -1,5 +1,5 @@
 ---
-name: gsd-code-review
+name: gsd:code-review
 description: Review source files changed during a phase for bugs, security issues, and code quality problems
 argument-hint: "<phase-number> [--depth=quick|standard|deep] [--files file1,file2,...] [--fix [--all] [--auto]]"
 allowed-tools:
@@ -31,7 +31,7 @@ Output: {padded_phase}-REVIEW.md in phase directory + inline summary of findings
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/code-review.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/code-review.md
 </execution_context>
 
 <context>

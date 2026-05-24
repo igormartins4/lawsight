@@ -1,5 +1,5 @@
 ---
-name: gsd-ui-phase
+name: gsd:ui-phase
 description: Generate UI design contract (UI-SPEC.md) for frontend phases
 argument-hint: "[phase]"
 allowed-tools:
@@ -21,8 +21,8 @@ Flow: Validate → Research UI → Verify UI-SPEC → Done
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/ui-phase.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/ui-phase.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <context>

@@ -8,9 +8,9 @@ Orchestrator only does: init, loop control, parse CYCLE_SUMMARY for HIGH count, 
 <required_reading>
 Read all files referenced by the invoking prompt's execution_context before starting.
 
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/revision-loop.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/gates.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/agent-contracts.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/revision-loop.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/gates.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/agent-contracts.md
 </required_reading>
 
 <process>
@@ -43,18 +43,7 @@ echo "$ARGUMENTS" | grep -qE '\-\-ws\s+\S+' && GSD_WS=$(echo "$ARGUMENTS" | grep
 ## 1.5. Config Gate (feature disabled by default)
 
 ```bash
-# SDK resolution: prefer local gsd-tools.cjs, fall back to global gsd-sdk (#3668)
-GSD_TOOLS="${RUNTIME_DIR:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}/get-shit-done/bin/gsd-tools.cjs"
-if [ -f "$GSD_TOOLS" ]; then
-  GSD_SDK="node $GSD_TOOLS"
-elif command -v gsd-sdk >/dev/null 2>&1; then
-  GSD_SDK="gsd-sdk"
-else
-  echo "ERROR: gsd-sdk not found on PATH and $GSD_TOOLS does not exist." >&2
-  echo "Run: npx get-shit-done-cc@latest --claude --local" >&2
-  exit 1
-fi
-CONVERGENCE_ENABLED=$($GSD_SDK query config-get workflow.plan_review_convergence 2>/dev/null || echo "false")
+CONVERGENCE_ENABLED=$(gsd-sdk query config-get workflow.plan_review_convergence 2>/dev/null || echo "false")
 ```
 
 **If `CONVERGENCE_ENABLED` is not `"true"`:** Display and exit:
@@ -67,13 +56,13 @@ Enable it with:
 
   gsd config-set workflow.plan_review_convergence true
 
-Then re-run: /gsd-plan-review-convergence {PHASE}
+Then re-run: /gsd:plan-review-convergence {PHASE}
 ```
 
 ## 2. Initialize
 
 ```bash
-INIT=$(node "C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" init plan-phase "$PHASE")
+INIT=$(node "/home/igor/Documentos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" init plan-phase "$PHASE")
 if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
 ```
 
@@ -86,7 +75,7 @@ Set `TEXT_MODE=true` if `--text` is present in $ARGUMENTS OR `text_mode` from in
 ## 3. Validate Phase + Pre-flight Gate
 
 ```bash
-PHASE_INFO=$(node "C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" roadmap get-phase "${PHASE}")
+PHASE_INFO=$(node "/home/igor/Documentos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" roadmap get-phase "${PHASE}")
 ```
 
 **If `found` is false:** Error with available phases. Exit.
@@ -113,7 +102,7 @@ Display: `◆ No plans found — spawning initial planning agent...`
 ```text
 Agent(
   description="Initial planning Phase {PHASE}",
-  prompt="Run /gsd-plan-phase for Phase {PHASE}.
+  prompt="Run /gsd:plan-phase for Phase {PHASE}.
 
 Execute: Skill(skill='gsd-plan-phase', args='{PHASE} {GSD_WS}')
 
@@ -149,7 +138,7 @@ Display: `◆ Cycle {cycle}/{MAX_CYCLES} — spawning review agent...`
 ```text
 Agent(
   description="Cross-AI review Phase {PHASE} cycle {cycle}",
-  prompt="Run /gsd-review for Phase {PHASE}.
+  prompt="Run /gsd:review for Phase {PHASE}.
 
 Execute: Skill(skill='gsd-review', args='--phase {PHASE} {REVIEWER_FLAGS} {GSD_WS}')
 
@@ -224,7 +213,7 @@ fi
 **If HIGH_COUNT == 0 (converged):**
 
 ```bash
-node "C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" state planned-phase --phase "${PHASE}" --name "${phase_name}" --plans "${PLAN_COUNT}"
+node "/home/igor/Documentos/code/lawsight/.claude/get-shit-done/bin/gsd-tools.cjs" state planned-phase --phase "${PHASE}" --name "${phase_name}" --plans "${PLAN_COUNT}"
 ```
 
 Display:
@@ -237,7 +226,7 @@ Display:
  No HIGH concerns remaining.
 
  REVIEWS.md: {REVIEWS_FILE}
- Next: /gsd-execute-phase {PHASE}
+ Next: /gsd:execute-phase {PHASE}
 ```
 
 Exit — convergence achieved.
@@ -291,8 +280,8 @@ If "Manual review":
 ```text
 Review the concerns in: {REVIEWS_FILE}
 
-To replan manually:  /gsd-plan-phase {PHASE} --reviews
-To restart loop:     /gsd-plan-review-convergence {PHASE} {REVIEWER_FLAGS}
+To replan manually:  /gsd:plan-phase {PHASE} --reviews
+To restart loop:     /gsd:plan-review-convergence {PHASE} {REVIEWER_FLAGS}
 ```
 Exit workflow.
 
@@ -307,7 +296,7 @@ Display: `◆ Spawning replan agent with review feedback...`
 ```text
 Agent(
   description="Replan Phase {PHASE} with review feedback cycle {cycle}",
-  prompt="Run /gsd-plan-phase with --reviews for Phase {PHASE}.
+  prompt="Run /gsd:plan-phase with --reviews for Phase {PHASE}.
 
 Execute: Skill(skill='gsd-plan-phase', args='{PHASE} --reviews --skip-research {GSD_WS}')
 

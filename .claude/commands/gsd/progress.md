@@ -1,5 +1,5 @@
 ---
-name: gsd-progress
+name: gsd:progress
 description: Check progress, advance workflow, or dispatch freeform intent — the unified GSD situational command
 argument-hint: "[--forensic | --next | --do \"task description\"]"
 allowed-tools:
@@ -29,10 +29,10 @@ Three modes:
 </flags>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/progress.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/next.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/do.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/progress.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/next.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/do.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <process>

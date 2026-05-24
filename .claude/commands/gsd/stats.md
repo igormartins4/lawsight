@@ -1,5 +1,5 @@
 ---
-name: gsd-stats
+name: gsd:stats
 description: Display project statistics — phases, plans, requirements, git metrics, and timeline
 allowed-tools:
   - Read
@@ -11,7 +11,7 @@ Display comprehensive project statistics including phase progress, plan executio
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/stats.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/stats.md
 </execution_context>
 
 <process>

@@ -1,5 +1,5 @@
 ---
-name: gsd-autonomous
+name: gsd:autonomous
 description: Run all remaining phases autonomously — discuss→plan→execute per phase
 argument-hint: "[--from N] [--to N] [--only N] [--interactive]"
 allowed-tools:
@@ -26,8 +26,8 @@ Uses ROADMAP.md phase discovery and Skill() flat invocations for each phase comm
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/autonomous.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/autonomous.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <context>

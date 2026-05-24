@@ -1,5 +1,5 @@
 ---
-name: gsd-config
+name: gsd:config
 description: Configure GSD settings — workflow toggles, advanced knobs, integrations, and model profile
 argument-hint: "[--advanced | --integrations | --profile <name>]"
 allowed-tools:
@@ -32,9 +32,9 @@ Mode routing:
 </routing>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/settings.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/settings-advanced.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/settings-integrations.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/settings.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/settings-advanced.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/settings-integrations.md
 </execution_context>
 
 <context>

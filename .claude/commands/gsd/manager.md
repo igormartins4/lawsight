@@ -1,5 +1,5 @@
 ---
-name: gsd-manager
+name: gsd:manager
 description: Interactive command center for managing multiple phases from one terminal
 argument-hint: "[--analyze-deps]"
 allowed-tools:
@@ -26,8 +26,8 @@ Designed for power users who want to parallelize work across phases from one ter
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/manager.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/manager.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <context>
@@ -38,7 +38,7 @@ Project context, phase list, dependencies, and recommendations are resolved insi
 
 <process>
 If `--analyze-deps` is in $ARGUMENTS:
-Read and execute `C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/analyze-dependencies.md` end-to-end.
+Read and execute `/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/analyze-dependencies.md` end-to-end.
 
 Execute end-to-end.
 Maintain the dashboard refresh loop until the user exits or all phases complete.

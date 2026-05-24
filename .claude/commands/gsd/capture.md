@@ -1,5 +1,5 @@
 ---
-name: gsd-capture
+name: gsd:capture
 description: Capture ideas, tasks, notes, and seeds to their destination
 argument-hint: "[--note | --backlog | --seed | --list] [text]"
 allowed-tools:
@@ -36,12 +36,12 @@ Mode routing:
 </routing>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/add-todo.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/note.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/add-backlog.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/plant-seed.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/check-todos.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/add-todo.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/note.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/add-backlog.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/plant-seed.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/check-todos.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <context>

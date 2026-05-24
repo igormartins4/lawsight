@@ -1,5 +1,5 @@
 ---
-name: gsd-ai-integration-phase
+name: gsd:ai-integration-phase
 description: Generate an AI-SPEC.md design contract for phases that involve building AI systems.
 argument-hint: "[phase number]"
 allowed-tools:
@@ -22,9 +22,9 @@ Flow: Select Framework → Research Docs → Research Domain → Design Eval Str
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/ai-integration-phase.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ai-frameworks.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ai-evals.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/ai-integration-phase.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ai-frameworks.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ai-evals.md
 </execution_context>
 
 <context>

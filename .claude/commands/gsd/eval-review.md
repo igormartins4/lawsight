@@ -1,5 +1,5 @@
 ---
-name: gsd-eval-review
+name: gsd:eval-review
 description: Audit an executed AI phase's evaluation coverage and produce an EVAL-REVIEW.md remediation plan.
 argument-hint: "[phase number]"
 allowed-tools:
@@ -19,8 +19,8 @@ Produces EVAL-REVIEW.md with score, verdict, gaps, and remediation plan.
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/eval-review.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ai-evals.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/eval-review.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ai-evals.md
 </execution_context>
 
 <context>

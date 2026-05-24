@@ -11,8 +11,8 @@ This prevents the two most common AI development failures: choosing the wrong fr
 </purpose>
 
 <required_reading>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ai-frameworks.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ai-evals.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ai-frameworks.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ai-evals.md
 </required_reading>
 
 <process>
@@ -20,18 +20,7 @@ This prevents the two most common AI development failures: choosing the wrong fr
 ## 1. Initialize
 
 ```bash
-# SDK resolution: prefer local gsd-tools.cjs, fall back to global gsd-sdk (#3668)
-GSD_TOOLS="${RUNTIME_DIR:-$(git rev-parse --show-toplevel 2>/dev/null || pwd)}/get-shit-done/bin/gsd-tools.cjs"
-if [ -f "$GSD_TOOLS" ]; then
-  GSD_SDK="node $GSD_TOOLS"
-elif command -v gsd-sdk >/dev/null 2>&1; then
-  GSD_SDK="gsd-sdk"
-else
-  echo "ERROR: gsd-sdk not found on PATH and $GSD_TOOLS does not exist." >&2
-  echo "Run: npx get-shit-done-cc@latest --claude --local" >&2
-  exit 1
-fi
-INIT=$($GSD_SDK query init.plan-phase "$PHASE")
+INIT=$(gsd-sdk query init.plan-phase "$PHASE")
 if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
 ```
 
@@ -41,31 +30,31 @@ Parse JSON for: `phase_dir`, `phase_number`, `phase_name`, `phase_slug`, `padded
 
 Resolve agent models:
 ```bash
-SELECTOR_MODEL=$($GSD_SDK query resolve-model gsd-framework-selector 2>/dev/null | jq -r '.model' 2>/dev/null || true)
-RESEARCHER_MODEL=$($GSD_SDK query resolve-model gsd-ai-researcher 2>/dev/null | jq -r '.model' 2>/dev/null || true)
-DOMAIN_MODEL=$($GSD_SDK query resolve-model gsd-domain-researcher 2>/dev/null | jq -r '.model' 2>/dev/null || true)
-PLANNER_MODEL=$($GSD_SDK query resolve-model gsd-eval-planner 2>/dev/null | jq -r '.model' 2>/dev/null || true)
+SELECTOR_MODEL=$(gsd-sdk query resolve-model gsd-framework-selector 2>/dev/null | jq -r '.model' 2>/dev/null || true)
+RESEARCHER_MODEL=$(gsd-sdk query resolve-model gsd-ai-researcher 2>/dev/null | jq -r '.model' 2>/dev/null || true)
+DOMAIN_MODEL=$(gsd-sdk query resolve-model gsd-domain-researcher 2>/dev/null | jq -r '.model' 2>/dev/null || true)
+PLANNER_MODEL=$(gsd-sdk query resolve-model gsd-eval-planner 2>/dev/null | jq -r '.model' 2>/dev/null || true)
 ```
 
 Check config:
 ```bash
-AI_PHASE_ENABLED=$($GSD_SDK query config-get workflow.ai_integration_phase 2>/dev/null || echo "true")
+AI_PHASE_ENABLED=$(gsd-sdk query config-get workflow.ai_integration_phase 2>/dev/null || echo "true")
 ```
 
 **If `AI_PHASE_ENABLED` is `false`:**
 ```
-AI phase is disabled in config. Enable via /gsd-settings.
+AI phase is disabled in config. Enable via /gsd:settings.
 ```
 Exit workflow.
 
-**If `planning_exists` is false:** Error — run `/gsd-new-project` first.
+**If `planning_exists` is false:** Error — run `/gsd:new-project` first.
 
 ## 2. Parse and Validate Phase
 
 Extract phase number from $ARGUMENTS. If not provided, detect next unplanned phase.
 
 ```bash
-PHASE_INFO=$($GSD_SDK query roadmap.get-phase "${PHASE}")
+PHASE_INFO=$(gsd-sdk query roadmap.get-phase "${PHASE}")
 ```
 
 **If `found` is false:** Error with available phases.
@@ -75,7 +64,7 @@ PHASE_INFO=$($GSD_SDK query roadmap.get-phase "${PHASE}")
 **If `has_context` is false:**
 ```
 No CONTEXT.md found for Phase {N}.
-Recommended: run /gsd-discuss-phase {N} first to capture framework preferences.
+Recommended: run /gsd:discuss-phase {N} first to capture framework preferences.
 Continuing without user decisions — framework selector will ask all questions.
 ```
 Continue (non-blocking).
@@ -113,7 +102,7 @@ Display:
 
 Spawn `gsd-framework-selector` with:
 ```markdown
-Read C:/Users/igorsantos/code/lawsight/.claude/agents/gsd-framework-selector.md for instructions.
+Read /home/igor/Documentos/code/lawsight/.claude/agents/gsd-framework-selector.md for instructions.
 
 <objective>
 Select the right AI framework for Phase {phase_number}: {phase_name}
@@ -133,13 +122,13 @@ Goal: {phase_goal}
 
 Parse selector output for: `primary_framework`, `system_type`, `model_provider`, `eval_concerns`, `alternative_framework`.
 
-**If selector fails or returns empty:** Exit with error — "Framework selection failed. Re-run /gsd-ai-integration-phase {N} or answer the framework question in /gsd-discuss-phase {N} first."
+**If selector fails or returns empty:** Exit with error — "Framework selection failed. Re-run /gsd:ai-integration-phase {N} or answer the framework question in /gsd:discuss-phase {N} first."
 
 ## 6. Initialize AI-SPEC.md
 
 Copy template:
 ```bash
-cp "C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/templates/AI-SPEC.md" "${PHASE_DIR}/${PADDED_PHASE}-AI-SPEC.md"
+cp "/home/igor/Documentos/code/lawsight/.claude/get-shit-done/templates/AI-SPEC.md" "${PHASE_DIR}/${PADDED_PHASE}-AI-SPEC.md"
 ```
 
 Fill in header fields:
@@ -159,7 +148,7 @@ Display:
 
 Spawn `gsd-ai-researcher` with:
 ```markdown
-Read C:/Users/igorsantos/code/lawsight/.claude/agents/gsd-ai-researcher.md for instructions.
+Read /home/igor/Documentos/code/lawsight/.claude/agents/gsd-ai-researcher.md for instructions.
 
 **Tool discipline (mandatory):**
 Use the Edit tool exclusively when modifying AI-SPEC.md — NEVER use Write on this file.
@@ -194,7 +183,7 @@ Display:
 
 Spawn `gsd-domain-researcher` with:
 ```markdown
-Read C:/Users/igorsantos/code/lawsight/.claude/agents/gsd-domain-researcher.md for instructions.
+Read /home/igor/Documentos/code/lawsight/.claude/agents/gsd-domain-researcher.md for instructions.
 
 **Tool discipline (mandatory):**
 Use the Edit tool exclusively when modifying AI-SPEC.md — NEVER use Write on this file.
@@ -227,7 +216,7 @@ Display:
 
 Spawn `gsd-eval-planner` with:
 ```markdown
-Read C:/Users/igorsantos/code/lawsight/.claude/agents/gsd-eval-planner.md for instructions.
+Read /home/igor/Documentos/code/lawsight/.claude/agents/gsd-eval-planner.md for instructions.
 
 <objective>
 Design evaluation strategy for Phase {phase_number}: {phase_name}
@@ -287,7 +276,7 @@ git commit -m "docs({phase_slug}): generate AI-SPEC.md — {primary_framework} +
 ◆ Output: {ai_spec_path}
 
 Next step:
-  /gsd-plan-phase {N}   — planner will consume AI-SPEC.md
+  /gsd:plan-phase {N}   — planner will consume AI-SPEC.md
 ```
 
 </process>

@@ -1,5 +1,5 @@
 ---
-name: gsd-new-milestone
+name: gsd:new-milestone
 description: Start a new milestone cycle — update PROJECT.md and route to requirements
 argument-hint: "[milestone name, e.g., 'v1.1 Notifications']"
 allowed-tools:
@@ -22,15 +22,15 @@ Brownfield equivalent of new-project. Project exists, PROJECT.md has history. Ga
 - `.planning/ROADMAP.md` — phase structure (continues numbering)
 - `.planning/STATE.md` — reset for new milestone
 
-**After:** `/gsd-plan-phase [N]` to start execution.
+**After:** `/gsd:plan-phase [N]` to start execution.
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/new-milestone.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/questioning.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/templates/project.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/templates/requirements.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/new-milestone.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/questioning.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/templates/project.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/templates/requirements.md
 </execution_context>
 
 <context>

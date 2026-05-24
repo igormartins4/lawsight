@@ -1,5 +1,5 @@
 ---
-name: gsd-plan-review-convergence
+name: gsd:plan-review-convergence
 description: "Cross-AI plan convergence loop — replan with review feedback until no HIGH concerns remain."
 argument-hint: "<phase> [--codex] [--gemini] [--claude] [--opencode] [--ollama] [--lm-studio] [--llama-cpp] [--text] [--ws <name>] [--all] [--max-cycles N]"
 allowed-tools:
@@ -25,10 +25,10 @@ Replaces gsd-plan-phase's internal gsd-plan-checker with external AI reviewers (
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/plan-review-convergence.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/revision-loop.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/gates.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/agent-contracts.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/plan-review-convergence.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/revision-loop.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/gates.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/agent-contracts.md
 </execution_context>
 
 <runtime_note>

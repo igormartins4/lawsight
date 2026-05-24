@@ -1,5 +1,5 @@
 ---
-name: gsd-update
+name: gsd:update
 description: Update GSD to latest version with changelog display
 argument-hint: "[--sync | --reapply]"
 allowed-tools:
@@ -25,7 +25,7 @@ Routes to the update workflow which handles:
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/update.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/update.md
 </execution_context>
 
 <flags>
@@ -43,6 +43,6 @@ Parse the first token of $ARGUMENTS:
 </process>
 
 <execution_context_extended>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/sync-skills.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/reapply-patches.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/sync-skills.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/reapply-patches.md
 </execution_context_extended>

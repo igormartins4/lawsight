@@ -1,5 +1,5 @@
 ---
-name: gsd-spike
+name: gsd:spike
 description: Spike an idea through experiential exploration, or propose what to spike next (frontier mode)
 argument-hint: "[idea to validate] [--quick] [--text] [--wrap-up] or [frontier]"
 allowed-tools:
@@ -30,9 +30,9 @@ Does not require prior new-project setup — auto-creates `.planning/spikes/` if
 </objective>
 
 <execution_context>
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/spike.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/workflows/spike-wrap-up.md
-@C:/Users/igorsantos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/spike.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/workflows/spike-wrap-up.md
+@/home/igor/Documentos/code/lawsight/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <runtime_note>
